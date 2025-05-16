@@ -20,6 +20,21 @@ class _MyThiredScreenState extends State<MyThiredScreen> {
           title: Text('Another Screen'),
           backgroundColor: Colors.blue,
         ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+              child: TextButton.icon(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                label: const Text('Go to Home Screen'),
+                icon: const Icon(Icons.arrow_back),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
