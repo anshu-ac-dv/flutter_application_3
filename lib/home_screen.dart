@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'second_screen.dart';
 
 void main() {
   runApp(const MyHome());
@@ -19,7 +20,24 @@ class MyHome extends StatelessWidget {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Icon(Icons.home, size: 100, color: Colors.blue)],
+              children: [
+                const Text(
+                  'Welcome to Flutter',
+                  style: TextStyle(fontSize: 24),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MySecondScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Go to Second Screen'),
+                ),
+              ],
             ),
           ),
         ),
