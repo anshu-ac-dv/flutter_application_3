@@ -15,8 +15,13 @@ class MyHome extends StatelessWidget {
           title: const Text('Flutter Demo'),
           backgroundColor: Colors.blue,
         ),
-        body: const Center(
-          child: Text('Hello World'),
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Icon(Icons.home, size: 100, color: Colors.blue)],
+            ),
+          ),
         ),
       ),
     );
