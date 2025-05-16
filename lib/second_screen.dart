@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter_application_3/thired_screen.dart';
 
 void main() {
   runApp(const MySecondScreen());
@@ -18,32 +18,37 @@ class _MySecondScreenState extends State<MySecondScreen> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Second Screen'),
+          title: const Text('Animated Text'),
           backgroundColor: Colors.blue,
         ),
-        body: SafeArea(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const SizedBox(width: 20.0, height: 100.0),
-              const Text('Be', style: TextStyle(fontSize: 43.0)),
-              const SizedBox(width: 20.0, height: 100.0),
-              DefaultTextStyle(
-                style: const TextStyle(fontSize: 40.0, fontFamily: 'Horizon'),
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    RotateAnimatedText('AWESOME'),
-                    RotateAnimatedText('OPTIMISTIC'),
-                    RotateAnimatedText('DIFFERENT'),
-                  ],
-                  onTap: () {
-                    // ignore: avoid_print
-                    print("Tap Event");
-                  },
-                ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+              child: TextButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyThiredScreen(),
+                    ),
+                  );
+                },
+                label: const Text('Go to Thired Screen'),
+                icon: const Icon(Icons.arrow_forward),
               ),
-            ],
-          ),
+            ),
+            Center(
+              child: TextButton.icon(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                label: const Text('Go to Home Screen'),
+                icon: const Icon(Icons.arrow_back),
+              ),
+            ),
+          ],
         ),
       ),
     );
